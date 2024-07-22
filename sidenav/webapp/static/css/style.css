@@ -1,0 +1,171 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
+
+
+:root {
+    --font-size: 2.3rem; /* 23 px */
+    --smaller-font-size: 1.7rem; /* texto, parrafos */
+    --font-color: #08042b;
+    --font-family: 'Roboto', sans-serif;
+    --sidebar-backgroud-color: #08042b;
+    --sidebar-header-color: #150c59;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1 rem sea igual a 10 pixeles*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a, li, body, h1 {
+    font-size: var(--font-size);
+    color: #08042b;;
+}
+a {
+    text-decoration: none;
+}
+
+.navbar-brand { /* titulo skittle del navbar*/
+    
+    font-size: var(--font-size);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-header h1 a {
+    color: inherit; /* Hereda el color del h1 */
+}
+
+p {
+    font-size: var(--smaller-font-size); /* 16px */
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 2222;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--sidebar-backgroud-color);
+    transition: left 0.3s ease;
+}
+
+.sidebar-header {
+    position: relative;
+    background-color: var(--sidebar-header-color);
+    user-select: none;
+    margin-bottom: 50%;
+}
+
+
+.sidebar h1 {
+    text-align: center;
+    color: white;
+    text-align: end;
+    line-height: 52px;
+}
+
+/* #nav-title {
+    font-size: 3rem;
+} */
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 6rem;
+    color: white;
+    padding-left: 4rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: 0.4s;
+}
+
+.sidebar ul li:hover a {
+    padding-left: 5rem;
+}
+
+.i-option {
+    margin-right: 2rem;
+}
+
+#check {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+label {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar-close-btn {
+    position: absolute;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 3px;
+}
+
+#sidebar-open-btn {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: var(--font-size);
+    color: black;
+    padding: .6rem 1.2rem;
+}
+
+#sidebar-close-btn {
+    z-index: 1000;
+    position: absolute; /* Posiciona el botón de manera absoluta dentro del contenedor con posicion relativa*/
+    right: 1rem; /* Ajusta el margen derecho del botón */
+    top: 50%; /* Posiciona el botón verticalmente en el centro del contenedor */
+    transform: translateY(-50%); /* Ajusta el botón exactamente al centro vertical */
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: var(--font-size);
+    cursor: pointer;
+}
+
+.sidebar-active {
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+.body-sidebar-active {
+    margin-left: 250px;
+}
+.overlay-active {
+    display: block;
+}
+
+.hide-elements {
+    opacity: 0;
+}
